@@ -1,3 +1,6 @@
+# Input format: Textfile starts with a list of words seperated by newlines that
+# comprises the available dictionary.  Followed by a list of digits seperated
+# by newlines to be autocorrected based on the dictionary
 class TrieNode:
 
     def __init__(self):
@@ -37,7 +40,7 @@ class TrieNode:
         return "vals: " + str(self.words) + "children: " + str(self.children)
 
 
-class T9:
+class Autocorrect:
     def __init__(self, filein, fileout):
         self.filein = filein
         self.fileout = fileout
@@ -66,4 +69,5 @@ class T9:
                 f.write(line+": " + base_node.traverse(line))
                 results.append(line+": " + base_node.traverse(line))
 
-T9("t9-test-input.txt", "t9-test-output.txt").process()
+# Example Use:
+# Autocorrect("t9-test-input.txt", "t9-test-output.txt").process()
