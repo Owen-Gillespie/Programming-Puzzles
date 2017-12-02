@@ -15,6 +15,3 @@ def halfwayMatchingSum(filename):
     halfLen = len(data)//2
     return sum(2*[int(data[i]) for i in range(halfLen) if data[i] == data[i+halfLen]])
 
-
-print(contiguousMatchingSum('input.txt'))
-print(halfwayMatchingSum('input.txt'))
